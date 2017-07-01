@@ -1,0 +1,96 @@
+# Site settings
+title: Clean Blog
+header-img: assets/img/home-bg.jpg
+email: your-email@yourdomain.com
+description: "Write your site description here. It will be used as your sites meta description as well!"
+
+copyright:
+  name: Vous/Votre Projet/Votre Société
+  url: http://monsite.com/mes-info-de-copyright.html
+  licence: Libre de droits sous licence MIT
+
+twitter_userid: mikemaggire
+github_userid:  mikemaggire
+gplus_userid: mikemaggire
+facebook_userid:  mikemaggire
+linkedin_userid:  mikemaggire
+email:  votre-email@votredomaine.com
+
+# A noter que l'URL de votre site publié doit être configurer dans le fichier 
+# de configuration des publication, _config_test.yml et _config_prod.yml qui
+# se trouvent dans le repertoire _studiojekyll
+
+############################################################ VERSION
+# NOTA : Le numéro de version V:x.y.z du site est géré automatiquement 
+# au moment du deploiement en test et en prod
+# Le numéro z est incrémenté à chaque build de l'environnement de test
+# Le numéro y est incrémenté à chaque build de l'environnement de prod
+# Pour incrémenter le numéro de version majeur (x), utilisez la commande
+# 'npm version major' en ouvrant une console au niveau du repertoire racine de votre site
+
+############################################################ COMMENTAIRES
+# Pour activer DISQUS à la fin des articles 
+# renseignez votre identifiant DISQUS (voir https://disqus.com/) 
+# en face de la variable 'shortname' ci-après.
+# Plus d'explications : http://wiki.maggire.net/blogging-studio-jekyll/2017/06/25/comment-activer-commentaires.html
+# Pour désactiver DISQUS, mettez les deux lignes suivantes en commentaire
+# disqus:
+#  shortname: blogging-studio-jekyll
+
+############################################################ ANALYTICS
+# Pour activer Google Analytics sur vos pages
+# Sinon mettez cette ligne en commentaire
+# google_analytics: UA-99999999-9
+
+############################################################
+# Les variables suivantes ne sont pas à modifier
+############################################################
+
+# encoding & format
+# se référer à http://shopify.github.io/liquid/filters/date/ pour personnaliser le format de date
+encoding: utf-8
+lang: fr
+date_format: "%d/%m/%Y"
+timezone: Europe/Paris
+markdown: kramdown
+paginate: 5
+
+# le format type des permalink
+permalink: /blog/:categories/:title.html
+
+# Extension utilisées
+plugins:
+ - jekyll-feed
+ - jemoji
+ - jekyll-sitemap
+ - jekyll-paginate
+
+# Nous forcons le traitement de .htaccess
+include: 
+  - .htaccess
+  - openurl.bat
+
+# Exclusions spécifiques à VS
+# Ces fichiers ne seront pas générés dans le repertoire de destination _site ou _site2deploy
+exclude: 
+ - TODO.md
+ - README.md
+ - package.json
+ - bs-config.json
+ - deploy2prod.bat
+ - deploy2test.bat
+ - Gemfile
+ - Gemfile.lock
+ - node_modules
+ - vendor/bundle/
+ - vendor/cache/
+ - vendor/gems/
+ - vendor/ruby/
+ - less
+ - Gruntfile.js
+
+# Traitement du repertoire _pages
+collections:
+  pages:
+    output: true
+    permalink: /:title.html

@@ -1,0 +1,38 @@
+---
+layout: page
+description: "Un modèle de site StudioJekyll sur un design original de StartBootstrap"
+---
+
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+    </a>
+    {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+    <p class="post-meta">Publié par {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} le {{ post.date | date: date_format }}</p>
+</div>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Article précédent</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Article suivant &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
