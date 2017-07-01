@@ -22,7 +22,7 @@
                 {%- for node in pages_list -%}
                     {%- if node.navbar != null -%}
                     <li>
-                        <a href="{{ site.baseurl }}{{ node.permalink }}">{{ node.navbar }}</a>
+                        <a href="{{ site.baseurl }}{{ node.url }}">{{ node.navbar }}</a>
                     </li>
                     {%- endif -%}
                 {%- endfor -%}
