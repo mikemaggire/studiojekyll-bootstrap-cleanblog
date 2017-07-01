@@ -34,8 +34,9 @@ email:  votre-email@votredomaine.com
 # en face de la variable 'shortname' ci-après.
 # Plus d'explications : http://wiki.maggire.net/blogging-studio-jekyll/2017-06-25-comment-activer-commentaires.html
 # Pour désactiver DISQUS, mettez les deux lignes suivantes en commentaire
-disqus:
-  shortname: blogging-studio-jekyll
+
+#disqus:
+#  shortname: blogging-studio-jekyll
 
 ############################################################ ANALYTICS
 # Pour activer Google Analytics sur vos pages
